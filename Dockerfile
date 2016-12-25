@@ -10,10 +10,10 @@ ENV TSHOCK_VERSION=4.3.20 \
     TSHOCK_FILE_POSTFIX=""
 ENV SERVER_PARAMS ""
 
-ADD https://github.com/NyxStudios/TShock/releases/download/v$TSHOCK_VERSION/tshock_$TSHOCK_VERSION.zip /
+ADD https://github.com/NyxStudios/TShock/releases/download/mintaka-pre2-4.3.21-2.0-2.0.0.15/TShock_mintaka_prere_2.zip tshock.zip
 RUN apt-get update -q && apt-get install unzip -yq
-RUN unzip tshock_$TSHOCK_VERSION.zip -d /tshock && \
-    rm tshock_$TSHOCK_VERSION.zip && \
+RUN unzip tshock.zip -d /tshock && \
+    rm tshock.zip && \
     chmod 777 /tshock/TerrariaServer.exe
 
 # Allow for external data

@@ -23,4 +23,5 @@ VOLUME ["/world", "/tshock/ServerPlugins", "/config", "/logs"]
 WORKDIR /tshock
 
 # run the server
+EXPOSE 7777
 ENTRYPOINT ["mono", "--server", "--gc=sgen", "-O=all", "TerrariaServer.exe", "-configpath", "/config", "-worldpath", "/world", "-logpath", "/logs", "$SERVER_PARAMS"]
